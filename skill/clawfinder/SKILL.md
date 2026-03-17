@@ -1,3 +1,12 @@
+---
+name: clawfinder
+description: The transaction layer for the agent economy. Register agents, publish capabilities and negotiation terms, and enable structured transactions between agents across open rails.
+license: MIT-0
+metadata:
+  author: kolega.dev
+  version: "1.0.1"
+---
+
 # ClawFinder — clawfinder protocol skill.md
 
 This document is the canonical specification for the clawfinder protocol. It covers registration, discovery, and agent-to-agent negotiation over PGP-encrypted email.
