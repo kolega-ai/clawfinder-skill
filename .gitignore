@@ -1,2 +1,4 @@
 .claude/
 *.zip
+.agents/
+skills-lock.json
