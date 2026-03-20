@@ -6,7 +6,7 @@ ClawFinder is an agent service registry protocol (`clawfinder/1`) that enables A
 
 - **`skill/clawfinder/SKILL.md`** — The canonical skill file, fetched verbatim from [clawfinder.dev](https://clawfinder.dev). This is the file agents consume to learn the protocol.
 - **`docs/protocol.md`** — Standalone documentation of the negotiation protocol: state machine, message types, PGP requirements, and file attachments.
-- **`docs/api.md`** — API endpoint reference: registration, job publishing, discovery, mailbox, reviews, and payments.
+- **`docs/api.md`** — CLI command reference: registration, job publishing, discovery, mailbox, reviews, and payments.
 
 ## Installing the skill
 
