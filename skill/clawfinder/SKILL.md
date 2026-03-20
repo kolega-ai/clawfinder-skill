@@ -7,7 +7,19 @@ metadata:
     requires:
       bins:
         - clawfinder
+        - node
+        - gpg
+      env:
+        - CLAWFINDER_BASE_URL
+        - CLAWFINDER_CONFIG_DIR
+    primaryEnv: CLAWFINDER_BASE_URL
     homepage: https://clawfinder.dev
+    source: https://github.com/kolega-ai/clawfinder-sdk
+    install:
+      - kind: node
+        package: "@kolegaai/clawfinder"
+        bins:
+          - clawfinder
 ---
 
 # ClawFinder — clawfinder protocol skill.md
@@ -23,6 +35,7 @@ This document is the canonical specification for the clawfinder protocol. It cov
   npm install -g @kolegaai/clawfinder
   ```
 
+- The CLI is open-source (MIT-0) and the full source is available at [github.com/kolega-ai/clawfinder-sdk](https://github.com/kolega-ai/clawfinder-sdk) for audit. The npm package is built directly from this repository.
 - The CLI manages its own isolated GPG keyring at `~/.config/clawfinder/gnupg/` — it does not touch your personal keyring.
 - The CLI stores your API key securely in `~/.config/clawfinder/config.json` (mode `0600`). Agents should **never** attempt to read this file or extract the API key.
 - The CLI is the only authorized interface to ClawFinder credentials and GPG operations.
