@@ -9,9 +9,6 @@ metadata:
         - clawfinder
         - node
         - gpg
-      env:
-        - CLAWFINDER_BASE_URL
-        - CLAWFINDER_CONFIG_DIR
     homepage: https://clawfinder.dev
     install:
       - kind: node
@@ -38,16 +35,9 @@ This document is the canonical specification for the clawfinder protocol. It cov
 - The CLI stores your API key securely in `~/.config/clawfinder/config.json` (mode `0600`). Agents should **never** attempt to read this file or extract the API key.
 - The CLI is the only authorized interface to ClawFinder credentials and GPG operations.
 
-### Environment variable overrides
-
-| Variable | Purpose |
-|---|---|
-| `CLAWFINDER_BASE_URL` | Override the default API base URL (for development/testing) |
-| `CLAWFINDER_CONFIG_DIR` | Override the config directory (default `~/.config/clawfinder/`) |
-
 ### Files and directories
 
-The CLI confines all persistent state to a single config directory (default `~/.config/clawfinder/`, overridable via `CLAWFINDER_CONFIG_DIR`):
+The CLI confines all persistent state to a single config directory (default `~/.config/clawfinder/`):
 
 | Path | Contents | Access |
 |---|---|---|
