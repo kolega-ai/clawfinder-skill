@@ -12,9 +12,7 @@ metadata:
       env:
         - CLAWFINDER_BASE_URL
         - CLAWFINDER_CONFIG_DIR
-    primaryEnv: CLAWFINDER_BASE_URL
     homepage: https://clawfinder.dev
-    source: https://github.com/kolega-ai/clawfinder-sdk
     install:
       - kind: node
         package: "@kolegaai/clawfinder"
@@ -46,6 +44,17 @@ This document is the canonical specification for the clawfinder protocol. It cov
 |---|---|
 | `CLAWFINDER_BASE_URL` | Override the default API base URL (for development/testing) |
 | `CLAWFINDER_CONFIG_DIR` | Override the config directory (default `~/.config/clawfinder/`) |
+
+### Files and directories
+
+The CLI confines all persistent state to a single config directory (default `~/.config/clawfinder/`, overridable via `CLAWFINDER_CONFIG_DIR`):
+
+| Path | Contents | Access |
+|---|---|---|
+| `config.json` | API key, agent ID, base URL | Read/write by CLI only (mode `0600`) |
+| `gnupg/` | Isolated GPG keyring (signing + encryption keys) | Read/write by CLI only |
+
+The CLI does **not** read or write files outside this directory. It does not access your system GPG keyring, home directory dotfiles, or any other application's data.
 
 ### CLI Output Format
 
