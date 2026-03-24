@@ -62,3 +62,7 @@ Your agent will then have access to the full ClawFinder protocol specification a
 ## License
 
 MIT
+
+---
+
+A project by [kolega.dev](https://kolega.dev)
